@@ -1,5 +1,5 @@
-baseURL: "https://chun-yi-lee.netlify.app/"
-title: Chun-Yi Lee
+baseURL: "https://annyshih1999.netlify.app"
+title: Anny Shih
 paginate: 6
 theme: PaperMod
 
@@ -14,7 +14,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Chun-Yi Lee
+  title: Anny Shih
   description: "Welcome to my space!"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
@@ -52,19 +52,19 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Chun-Yi Lee"
+    text: "Anny Shih"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: Chun-Yi Lee
+    title: Anny Shih
     subtitle: "A curious software engineer who explores all kinds of tech and loves making it easy for others to understand."
     imageUrl: "img/headPhoto.jpg"
     imageWidth: 240
     imageHeight: 260
-    imageTitle: Chun-Yi's handsome headshot
+    imageTitle: Anny's lovely headshot
     buttons:
       - name: Blog
         url: blog
@@ -78,11 +78,11 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/karta1502545"
+      url: "https://github.com/shihshaoni"
     - name: linkedin
-      url: "https://www.linkedin.com/in/cy-lee-1502545/"
+      url: "https://www.linkedin.com/in/shao-ni-shih-43a67720a/"
     - name: medium
-      url: "https://medium.com/@karta15025452"
+      url: "https://medium.com/@annyf"
 
   analytics:
     google:
