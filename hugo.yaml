@@ -138,7 +138,7 @@ menu:
       weight: 50
     - identifier: CV
       name: CV
-      url: https://drive.google.com/file/d/1Qe3TBuUjigo-0sYPcX_gmgvyNxLCxVK3/view?usp=drive_link
+      url: https://drive.google.com/file/d/1d9c80udvV0af3tHMKe7hRrfbu_AWvuiD/view?usp=sharing
       weight: 60
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
