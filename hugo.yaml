@@ -60,7 +60,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Anny Shih
-    subtitle: "A curious software engineer who explores all kinds of tech and loves making it easy for others to understand."
+    subtitle: "An engineer. A writer. A dreamer. A befuddled girl who's trying hard to make peace with the world and herself."
     imageUrl: "img/headPhoto.jpg"
     imageWidth: 240
     imageHeight: 260
