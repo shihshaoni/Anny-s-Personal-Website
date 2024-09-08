@@ -1,0 +1,226 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Anny Shih</title>
+<meta name=keywords content><meta name=description content='package main import "fmt" type DynamicArray struct { data []int length int } func initArray(size int) *DynamicArray { return &amp;DynamicArray{ data: make([]int, size), length: 0, } } func (arr *DynamicArray) insert(value int) { if arr.length == len(arr.data) { newData := make([]int, len(arr.data)*2) copy(newData, arr.data) arr.data = newData } arr.data[arr.length] = value arr.length++ } func (arr *DynamicArray) print() { for i := 0; i < arr.length; i++ { fmt.Printf("%d ", arr.data[i]) } fmt.'><meta name=author content="Me"><link rel=canonical href=http://localhost:1313/blog/%E5%8B%95%E6%85%8B%E9%99%A3%E5%88%97%E7%9A%84%E5%AF%A6%E4%BD%9C/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/blog/%E5%8B%95%E6%85%8B%E9%99%A3%E5%88%97%E7%9A%84%E5%AF%A6%E4%BD%9C/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZY51PC3F"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYZY51PC3F")}</script><meta property="og:title" content><meta property="og:description" content='package main import "fmt" type DynamicArray struct { data []int length int } func initArray(size int) *DynamicArray { return &amp;DynamicArray{ data: make([]int, size), length: 0, } } func (arr *DynamicArray) insert(value int) { if arr.length == len(arr.data) { newData := make([]int, len(arr.data)*2) copy(newData, arr.data) arr.data = newData } arr.data[arr.length] = value arr.length++ } func (arr *DynamicArray) print() { for i := 0; i < arr.length; i++ { fmt.Printf("%d ", arr.data[i]) } fmt.'><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/blog/%E5%8B%95%E6%85%8B%E9%99%A3%E5%88%97%E7%9A%84%E5%AF%A6%E4%BD%9C/"><meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="blog"><meta property="og:site_name" content="Anny Shih"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content><meta name=twitter:description content='package main import "fmt" type DynamicArray struct { data []int length int } func initArray(size int) *DynamicArray { return &amp;DynamicArray{ data: make([]int, size), length: 0, } } func (arr *DynamicArray) insert(value int) { if arr.length == len(arr.data) { newData := make([]int, len(arr.data)*2) copy(newData, arr.data) arr.data = newData } arr.data[arr.length] = value arr.length++ } func (arr *DynamicArray) print() { for i := 0; i < arr.length; i++ { fmt.Printf("%d ", arr.data[i]) } fmt.'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blogs","item":"http://localhost:1313/blog/"},{"@type":"ListItem","position":2,"name":"","item":"http://localhost:1313/blog/%E5%8B%95%E6%85%8B%E9%99%A3%E5%88%97%E7%9A%84%E5%AF%A6%E4%BD%9C/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"","name":"","description":"package main import \u0026quot;fmt\u0026quot; type DynamicArray struct { data []int length int } func initArray(size int) *DynamicArray { return \u0026amp;DynamicArray{ data: make([]int, size), length: 0, } } func (arr *DynamicArray) insert(value int) { if arr.length == len(arr.data) { newData := make([]int, len(arr.data)*2) copy(newData, arr.data) arr.data = newData } arr.data[arr.length] = value arr.length++ } func (arr *DynamicArray) print() { for i := 0; i \u0026lt; arr.length; i++ { fmt.Printf(\u0026quot;%d \u0026quot;, arr.data[i]) } fmt.","keywords":[],"articleBody":"package main import \"fmt\" type DynamicArray struct { data []int length int } func initArray(size int) *DynamicArray { return \u0026DynamicArray{ data: make([]int, size), length: 0, } } func (arr *DynamicArray) insert(value int) { if arr.length == len(arr.data) { newData := make([]int, len(arr.data)*2) copy(newData, arr.data) arr.data = newData } arr.data[arr.length] = value arr.length++ } func (arr *DynamicArray) print() { for i := 0; i \u003c arr.length; i++ { fmt.Printf(\"%d \", arr.data[i]) } fmt.Println() } func main() { arr := initArray(2) arr.insert(1) arr.insert(2) arr.insert(3) arr.insert(4) arr.print() } // 1. 動態陣列的實作 // 模擬一個動態陣列（類似於 Go 的切片），並使用指標來動態分配和擴展容量。 // 功能需求： // 支援數組的初始化、插入和擴容。 // 每當數組達到容量上限時，自動擴大容量。 package main import \"fmt\" // 定義動態數組結構 type DynamicArray struct { // 代表一個動態數組 data []int // 一個整數數組，用來存儲數 length int // 數組中已經存儲的元素數量 } // 初始化動態數組 func initArray(size int) *DynamicArray { return \u0026DynamicArray { // 該函式返回的是 *DynamicArray，也就是指向 DynamicArray 結構體的指標 data: make([]int, size) // 創建了一個長度為 size 的整數切片（數組） length: 0 // 將數組的初始長度設為 0，因為數組剛被創建，裡面還沒有任何元素 } } // 插入元素，必要時擴充數組容量 func (arr *DynamicArray) insert(value int) { if arr.length == len(arr.data) { // 檢查數組是否已經滿了。如果長度達到容量的上限，就需要擴充容量 // 擴充容量 newData := make([]int, len(arr.data)*2) // 創建一個比當前容量大兩倍的新數組 copy(newData, arr.data) // 將舊數組中的內容複製到新數組中 arr.data = newData // 將數組的指標指向新擴充的數組 } arr.data[arr.length] = value // 將新元素插入到數組的下一個可用位置 arr.length++ // 增加數組的長度，因為新元素已經成功插入 } // 列印數組內容 func (arr *DynamicArray) print() { for i := 0; i \u003c arr.length; i++ { // 它使用一個 for 迴圈遍歷 data 切片，列印出每個元素 fmt.Printf(\"%d \", arr.data[i]) // 用來列印數組中的每個元素，並保持格式化輸出 } fmt.Println() // 換行 } func main() { // 初始化動態數組 arr := initArray(2) // 初始化一個大小為 2 的動態數組 arr.insert(1) arr.insert(2) // 插入前兩個元素，此時數組達到初始容量 arr.insert(3) // 插入第三個元素，因為容量不足，數組會自動擴容 arr.insert(4) // 插入第四個元素 // 列印數組 arr.print() // 輸出: 1 2 3 4 } 1. 為什麼要定義DynamicArray這段struct？ a.封裝動態數組邏輯： DynamicArray 封裝了動態數組的邏輯，這樣你可以很方便地管理數組的資料和它的操作方法。 例如，你可以使用 insert() 方法插入元素，並自動處理容量擴充，而不用每次都手動檢查數組是否已滿。\nb.保持數據一致性： 這個結構體不僅存儲了數組的數據 (data []int)，還維護了數組的長度 (length int)。 length 用來跟蹤目前數組中實際存儲了多少元素，這與數組的容量是分開的。 data []int 代表底層儲存空間。 length int 用來表示數組中已插入的有效元素個數，這避免了在程式中使用 len(data) 和 cap(data) 來區分長度和容量。\nc.自動擴充容量： Go 的切片會自動管理底層數組的容量，但這個結構體讓你能控制擴充邏輯，比如在插入數據時手動擴充。 定義 DynamicArray 的目的之一就是模擬這種擴容機制，以便更清楚地展示切片內部是如何運作的。\nd.可擴展性： 如果你以後想添加更多功能，比如支持其他數據操作（排序、移除元素、查找元素等），將它們放在 DynamicArray 結構體中 會讓程式碼更有組織性，更易於維護和擴展。使用 struct 可以輕鬆添加更多欄位或方法，而不會干擾已有的邏輯。\n2.「封裝動態數組邏輯」 這裡的「封裝動態數組邏輯」意思是將管理動態數組的資料和操作（比如插入元素、擴充容量等）整合在一個結構體中，這樣程式使用者就不需要關心這些細節操作，而只需要使用定義好的方法（例如 insert()）。\n為什麼這很有用？ a. 簡化操作：你不必自己每次插入數據前都檢查數組是否滿了，也不需要手動擴容。這些操作已經被封裝在 insert() 方法裡，調用一次就可以完成。 b. 提升可讀性：程式碼更容易閱讀和理解。數據結構的操作被封裝到一個具體的結構體和方法中，讓程式碼看起來清晰明了。 c. 維護方便：如果以後需要修改數組的邏輯（比如改變擴容的方式），你只需要在 insert() 方法裡做修改，這樣使用者的其他程式碼就不會受到影響。 d. 總結來說，封裝的目的是為了簡化數據操作，讓代碼更加簡潔和可維護。 3. 有什麼與封裝相關的比喻嗎？ 當你使用一台咖啡機時，你不需要知道它內部是如何加熱水、如何將水通過咖啡粉，甚至如何控制溫度和水壓。你只需要按下按鈕，咖啡機就會自動完成所有的複雜操作，並給你一杯咖啡。\n封裝的概念： 咖啡機內部的所有操作都被封裝起來，作為使用者，你只需調用簡單的「接口」（按下按鈕），而不需要理解或處理內部的細節。\n當你駕駛汽車時，你不需要了解引擎如何運轉，也不需要知道每個零件是如何協同工作的。你只需要轉動方向盤、踩油門或剎車來控制汽車的行駛。\n封裝的概念： 汽車的複雜系統（引擎、傳動、制動系統等）都被封裝在車輛裡面。作為駕駛者，你透過簡單的控制（例如油門、剎車）來操作汽車，而不需要深入了解內部的運作方式。\n3. 結構體是什麼？ 結構體的用途： 結構體主要用於建模更複雜的實體或物件。例如：\n表示人：Person 結構體可以包含人的名字、年齡、性別等信息。 表示書籍：可以定義一個 Book 結構體，包含書名、作者、出版年份等屬性。 表示座標：可以定義一個 Point 結構體，包含 x 和 y 兩個坐標點。\n與封裝的關係： 結構體也經常與方法結合使用，這樣可以實現面向對象的封裝。通過定義方法，將操作與數據結合在一起，這樣使用者就可以通過方法來操作結構體的內部數據，並且數據的內部細節可以對外部程式隱藏。\n總結： 結構體是用來組織和封裝多個屬性的工具，讓你能夠更有條理地處理和表示複雜的實體或數據。通過結構體，你可以將多個相關屬性打包在一起，並且可以為它們定義方法，實現封裝和數據操作。\n4. 結構體與方法如何結合使用？ 1. 定義結構體與方法 首先，我們定義一個結構體，並在這個結構體上定義一些方法來操作它的數據。 package main\nimport \"fmt\" // 定義一個結構體 Person type Person struct { Name string Age int } // 為 Person 結構體定義一個方法，用來改變年齡 func (p *Person) SetAge(newAge int) { p.Age = newAge } // 為 Person 結構體定義另一個方法，用來輸出信息 func (p *Person) Greet() { fmt.Printf(\"Hi, I'm %s and I'm %d years old.\\n\", p.Name, p.Age) } func main() { // 創建一個 Person 實例 person := Person{Name: \"Alice\", Age: 30} // 使用 Greet 方法來輸出訊息 person.Greet() // 輸出: Hi, I'm Alice and I'm 30 years old. // 使用 SetAge 方法來更改年齡 person.SetAge(31) // 再次使用 Greet 方法來輸出訊息 person.Greet() // 輸出: Hi, I'm Alice and I'm 31 years old. } 解釋： 結構體定義：Person 結構體包含兩個字段，Name 和 Age，用來表示人的名字和年齡。 方法定義：方法是一個帶有「接收者」的函式。接收者是一個特定的類型，方法可以通過它來操作該類型的數據。這裡的 SetAge 和 Greet 方法都是針對 Person 結構體定義的。 func (p *Person) SetAge(newAge int)：這個方法有一個接收者 p *Person，表示它是針對 Person 類型的物件。它可以修改該物件的 Age 字段。 func (p *Person) Greet()：這個方法沒有任何參數，使用結構體內的數據來輸出訊息。 方法呼叫：在 main() 函式中，我們創建了一個 Person 結構體的實例，並使用 SetAge 和 Greet 來修改和輸出該結構體的數據。\n2. 為什麼要結合使用結構體與方法？ 結合使用結構體和方法的主要原因是為了實現封裝，即將數據和操作數據的行為集中在一起，達到以下效果：\n隱藏實現細節：外部程式不需要知道如何修改 Person 的年齡或打印信息，只需要呼叫方法即可。 提高程式的可讀性與可維護性：方法名稱可以直觀地表達其作用，讓程式碼更加易讀。 數據保護：通過提供方法來操作數據，你可以控制如何對結構體的字段進行操作，避免外部程式直接操作內部數據，防止意外修改。\n3. 方法接收者的選擇 Go 的方法接收者可以是值類型或指標類型。接收者的選擇取決於你希望如何處理數據。\n值接收者：如果方法不需要修改結構體中的數據，使用值接收者即可，這樣會傳遞一個結構體的副本。 指標接收者：如果方法需要修改結構體中的數據，應使用指標接收者。這樣方法就可以直接修改原來的數據，而不會只修改副本。\n範例：指標接收者和值接收者的區別\npackage main\nimport “fmt”\n// 定義結構體 Person type Person struct { Name string Age int }\n// 使用值接收者定義方法 func (p Person) GreetValue() { p.Age = 99 // 嘗試修改年齡 fmt.Printf(“GreetValue: Hi, I’m %s and I’m %d years old.\\n”, p.Name, p.Age) }\n// 使用指標接收者定義方法 func (p *Person) GreetPointer() { p.Age = 99 // 嘗試修改年齡 fmt.Printf(\"GreetPointer: Hi, I'm %s and I'm %d years old.\\n\", p.Name, p.Age) } func main() { person := Person{Name: \"Bob\", Age: 20} // 使用值接收者方法，無法改變原來的值 person.GreetValue() // 輸出: Hi, I'm Bob and I'm 99 years old. fmt.Println(person.Age) // 輸出: 20 // 使用指標接收者方法，可以改變原來的值 person.GreetPointer() // 輸出: Hi, I'm Bob and I'm 99 years old. fmt.Println(person.Age) // 輸出: 99 } 解釋： 值接收者 (GreetValue)：當我們使用值接收者時，方法內的修改只影響結構體的副本，不會改變原來的數據。 指標接收者 (GreetPointer)：當我們使用指標接收者時，方法內的修改直接影響原來的結構體數據，因此會反映在主程式中。\n總結： 結構體與方法的結合使用是 Go 語言中實現封裝的主要方式。方法允許你對結構體中的數據進行操作，同時隱藏實現細節，保持程式碼的簡潔性和易維護性。透過使用指標接收者，你可以直接修改結構體的數據，而值接收者則僅作用於副本，無法改變原數據。\n5. 具體比喻？ 房子與房主的比喻 把結構體想像成一棟房子，它有不同的屬性，例如房子的顏色、大小、樓層數等。而方法則是房主用來操作這些屬性的工具。房主可以通過這些方法來改變房子的狀態。\n結構體 House：代表一棟房子，包含房子的屬性，如顏色和大小。 方法 Paint()：這是一個「油漆房子」的方法，它可以改變房子的顏色。 方法 Renovate()：這是一個「翻新房子」的方法，讓你可以改變房子的大小。\n具體代碼對應： package main\nimport \"fmt\" // 定義房子結構體 type House struct { Color string Size int // 房子的大小 } // 定義一個改變房子顏色的方法 func (h *House) Paint(newColor string) { h.Color = newColor fmt.Printf(\"房子被漆成了 %s 色。\\n\", h.Color) } // 定義一個翻新房子的大小的方法 func (h *House) Renovate(newSize int) { h.Size = newSize fmt.Printf(\"房子的大小被改為 %d 平方米。\\n\", h.Size) } func main() { // 建立一個房子實例 myHouse := House{Color: \"白色\", Size: 100} // 呼叫方法改變房子的顏色 myHouse.Paint(\"紅色\") // 輸出: 房子被漆成了 紅色。 // 呼叫方法改變房子的大小 myHouse.Renovate(200) // 輸出: 房子的大小被改為 200 平方米。 } 解釋：\n結構體 House：就像一棟房子，包含顏色和大小的屬性。 方法 Paint() 和 Renovate()：就像房子的操作功能，可以通過這些方法來改變房子的顏色或大小，而不需要手動改變房子的屬性。這樣你只需告訴房子去「漆顏色」或「翻新」，它會自己處理細節。\n6. 為什麼這裡沒有接收DynamicArray卻可以直接回傳DynamicArray的地址？ 在這裡，DynamicArray 是在函數內部初始化的局部變數，但我們可以安全地回傳它的地址，並在外部使用。這是因為 Go 的逃逸分析（escape analysis）機制。\n1. 逃逸分析（Escape Analysis）： Go 的編譯器會自動判斷一個變數是否會在函數返回後仍然被使用。如果是這樣，Go 編譯器會將這個變數分配在堆上（heap），而不是在堆疊上（stack），即使它是函數內部的局部變數。\n在你的 initArray 函數中，DynamicArray 是局部變數，但因為你回傳了它的指標（\u0026DynamicArray{}），Go 編譯器知道這個變數需要在函數執行完畢後繼續存在，因此它會自動將這個變數分配到堆上，保證它在函數外部依然有效。\n2. 局部變數的生命周期： 在許多程式語言中，局部變數在函數返回後會被銷毀，但在 Go 中，通過指標回傳的變數只要有其他地方引用它，編譯器會確保它的生命周期足夠長，能夠在函數之外繼續存在。\n具體解釋 \u0026DynamicArray{} 的運作： \u0026DynamicArray{} 這一行會初始化一個 DynamicArray 的實例，並返回它的地址。雖然這個實例是在 initArray 函數內部創建的，但它的指標會被返回到函數外部。 Go 的編譯器自動處理這種情況，使這個 DynamicArray 的記憶體不會在函數結束時被釋放，因為它的指標還在外部被使用。\n3. 為什麼不需要明確傳入 DynamicArray？ 在這個場景中，DynamicArray 是由 initArray 函數來初始化的，而不是作為參數傳入。這裡的邏輯是「創建一個新的動態數組並回傳其地址」，因此不需要從外部傳入現有的 DynamicArray。該函數的設計是負責初始化和分配一個新的 DynamicArray，因此它自己創建並返回這個結構體的指標。\n小結： Go 會自動處理局部變數的記憶體管理，如果一個局部變數的指標需要在函數之外使用，Go 會將該變數分配到堆上，保證其在外部依然有效。 \u0026DynamicArray{} 創建了一個新的 DynamicArray，並返回它的指標，即使是在函數內部創建的變數，它依然可以安全地在外部使用，這是 Go 的逃逸分析機制的結果。 這樣的機制簡化了開發過程，讓開發者不用擔心手動管理變數的記憶體分配和釋放。\n7. Go 編譯器會根據變數的使用情況，決定變數是分配在「堆疊」（stack）還是「堆」（heap）上 具體解釋： 堆疊（Stack）： 當函數被呼叫時，局部變數通常會被分配在「堆疊」上，堆疊是函數的臨時記憶體空間。當函數返回時，堆疊上的記憶體會自動釋放。 如果變數只在函數內部使用，編譯器會將它放在堆疊上，這樣函數結束後記憶體就不再被保留。\n堆（Heap）： 如果某個變數的指標在函數結束後還需要繼續使用，Go 編譯器會將這個變數分配在「堆」上，這是一種全局的記憶體空間，函數返回後也不會立即釋放記憶體。 這樣做是為了保證該變數在函數結束後仍然可以被安全地引用。\n為什麼這很重要？ 在 Go 中，如果你在函數內部創建了一個變數，然後把它的指標返回出去，編譯器會自動將這個變數放在堆上，而不是堆疊上，這樣即使函數返回後，該變數依然可以在外部使用。這個過程稱為逃逸分析。\nfunc createNumber() *int { n := 42 return \u0026n // 返回 n 的指標 } 在這段程式碼中，n 是 createNumber 函數內部的變數。如果 Go 將 n 放在堆疊上，那麼當 createNumber 函數結束時，n 所佔用的記憶體會被釋放，這樣返回的指標將指向一個無效的記憶體位置。\n為了避免這個問題，Go 編譯器會檢查 n 是否在函數外部被使用（即它的指標被返回了），並決定將 n 放在堆上，這樣即使函數結束，n 仍然可以安全地被外部程式使用。\n總結： 當局部變數需要在函數結束後依然存在時，Go 編譯器會將該變數分配到「堆」上，而不是在函數結束時釋放的「堆疊」上。 這樣做可以確保變數的指標在外部使用時是安全的，不會指向無效的記憶體位置。 這樣你可以放心地返回局部變數的指標，而不用擔心記憶體被提前釋放。\n","wordCount":"810","inLanguage":"en","image":"http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished":"0001-01-01T00:00:00Z","dateModified":"0001-01-01T00:00:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/blog/%E5%8B%95%E6%85%8B%E9%99%A3%E5%88%97%E7%9A%84%E5%AF%A6%E4%BD%9C/"},"publisher":{"@type":"Organization","name":"Anny Shih","logo":{"@type":"ImageObject","url":"http://localhost:1313/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="Anny Shih (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=35>Anny Shih</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/archive/ title=Archive><span>Archive</span></a></li><li><a href=http://localhost:1313/blog/ title=Blog><span>Blog</span></a></li><li><a href=http://localhost:1313/project/ title=Project><span>Project</span></a></li><li><a href=http://localhost:1313/experience/ title=Experience><span>Experience</span></a></li><li><a href=http://localhost:1313/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href="https://drive.google.com/file/d/1d9c80udvV0af3tHMKe7hRrfbu_AWvuiD/view?usp=sharing" title=CV><span>CV</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/blog/>Blogs</a></div><h1 class="post-title entry-hint-parent"></h1><div class=post-meta>Me</div></header><div class=post-content><pre><code>package main
+
+import &quot;fmt&quot;
+
+type DynamicArray struct {
+	data   []int
+	length int
+}
+
+func initArray(size int) *DynamicArray {
+	return &amp;DynamicArray{
+		data:   make([]int, size),
+		length: 0,
+	}
+}
+
+func (arr *DynamicArray) insert(value int) {
+	if arr.length == len(arr.data) {
+		newData := make([]int, len(arr.data)*2)
+		copy(newData, arr.data)
+		arr.data = newData
+	}
+
+	arr.data[arr.length] = value
+	arr.length++
+}
+
+func (arr *DynamicArray) print() {
+	for i := 0; i &lt; arr.length; i++ {
+		fmt.Printf(&quot;%d &quot;, arr.data[i])
+	}
+	fmt.Println()
+}
+
+func main() {
+	arr := initArray(2)
+	arr.insert(1)
+	arr.insert(2)
+	arr.insert(3) 
+	arr.insert(4)
+
+	arr.print()
+}
+</code></pre><p></p><pre><code>// 1. 動態陣列的實作
+// 模擬一個動態陣列（類似於 Go 的切片），並使用指標來動態分配和擴展容量。
+
+// 功能需求：
+
+// 支援數組的初始化、插入和擴容。
+// 每當數組達到容量上限時，自動擴大容量。
+
+package main
+
+import &quot;fmt&quot;
+
+// 定義動態數組結構
+type DynamicArray struct { // 代表一個動態數組
+    data   []int // 一個整數數組，用來存儲數
+    length int // 數組中已經存儲的元素數量
+}
+
+// 初始化動態數組
+func initArray(size int) *DynamicArray {
+    return &amp;DynamicArray { // 該函式返回的是 *DynamicArray，也就是指向 DynamicArray 結構體的指標
+        data: make([]int, size) // 創建了一個長度為 size 的整數切片（數組）
+        length: 0 // 將數組的初始長度設為 0，因為數組剛被創建，裡面還沒有任何元素
+    }
+}
+
+// 插入元素，必要時擴充數組容量
+func (arr *DynamicArray) insert(value int) {
+    if arr.length == len(arr.data) { // 檢查數組是否已經滿了。如果長度達到容量的上限，就需要擴充容量
+        // 擴充容量
+        newData := make([]int, len(arr.data)*2) // 創建一個比當前容量大兩倍的新數組
+        copy(newData, arr.data) // 將舊數組中的內容複製到新數組中
+        arr.data = newData // 將數組的指標指向新擴充的數組
+    }
+
+    arr.data[arr.length] = value // 將新元素插入到數組的下一個可用位置
+    arr.length++ // 增加數組的長度，因為新元素已經成功插入
+}
+
+// 列印數組內容
+func (arr *DynamicArray) print() {
+    for i := 0; i &lt; arr.length; i++ { // 它使用一個 for 迴圈遍歷 data 切片，列印出每個元素
+        fmt.Printf(&quot;%d &quot;, arr.data[i]) // 用來列印數組中的每個元素，並保持格式化輸出
+    }
+    fmt.Println() // 換行
+}
+
+func main() {
+    // 初始化動態數組
+    arr := initArray(2) // 初始化一個大小為 2 的動態數組
+    arr.insert(1) 
+    arr.insert(2) // 插入前兩個元素，此時數組達到初始容量
+    arr.insert(3) // 插入第三個元素，因為容量不足，數組會自動擴容
+    arr.insert(4) // 插入第四個元素
+
+    // 列印數組
+    arr.print() // 輸出: 1 2 3 4
+}
+</code></pre><h2 id=1-為什麼要定義dynamicarray這段struct>1. 為什麼要定義DynamicArray這段struct？<a hidden class=anchor aria-hidden=true href=#1-為什麼要定義dynamicarray這段struct>#</a></h2><h4 id=a封裝動態數組邏輯-dynamicarray-封裝了動態數組的邏輯這樣你可以很方便地管理數組的資料和它的操作方法>a.封裝動態數組邏輯： DynamicArray 封裝了動態數組的邏輯，這樣你可以很方便地管理數組的資料和它的操作方法。<a hidden class=anchor aria-hidden=true href=#a封裝動態數組邏輯-dynamicarray-封裝了動態數組的邏輯這樣你可以很方便地管理數組的資料和它的操作方法>#</a></h4><p>例如，你可以使用 insert() 方法插入元素，並自動處理容量擴充，而不用每次都手動檢查數組是否已滿。</p><h4 id=b保持數據一致性-這個結構體不僅存儲了數組的數據-data-int還維護了數組的長度-length-int>b.保持數據一致性： 這個結構體不僅存儲了數組的數據 (data []int)，還維護了數組的長度 (length int)。<a hidden class=anchor aria-hidden=true href=#b保持數據一致性-這個結構體不僅存儲了數組的數據-data-int還維護了數組的長度-length-int>#</a></h4><p>length 用來跟蹤目前數組中實際存儲了多少元素，這與數組的容量是分開的。
+data []int 代表底層儲存空間。
+length int 用來表示數組中已插入的有效元素個數，這避免了在程式中使用 len(data) 和 cap(data) 來區分長度和容量。</p><h4 id=c自動擴充容量-go-的切片會自動管理底層數組的容量但這個結構體讓你能控制擴充邏輯比如在插入數據時手動擴充>c.自動擴充容量： Go 的切片會自動管理底層數組的容量，但這個結構體讓你能控制擴充邏輯，比如在插入數據時手動擴充。<a hidden class=anchor aria-hidden=true href=#c自動擴充容量-go-的切片會自動管理底層數組的容量但這個結構體讓你能控制擴充邏輯比如在插入數據時手動擴充>#</a></h4><p>定義 DynamicArray 的目的之一就是模擬這種擴容機制，以便更清楚地展示切片內部是如何運作的。</p><h4 id=d可擴展性-如果你以後想添加更多功能比如支持其他數據操作排序移除元素查找元素等將它們放在-dynamicarray-結構體中>d.可擴展性： 如果你以後想添加更多功能，比如支持其他數據操作（排序、移除元素、查找元素等），將它們放在 DynamicArray 結構體中<a hidden class=anchor aria-hidden=true href=#d可擴展性-如果你以後想添加更多功能比如支持其他數據操作排序移除元素查找元素等將它們放在-dynamicarray-結構體中>#</a></h4><p>會讓程式碼更有組織性，更易於維護和擴展。使用 struct 可以輕鬆添加更多欄位或方法，而不會干擾已有的邏輯。</p><h2 id=2封裝動態數組邏輯>2.「封裝動態數組邏輯」<a hidden class=anchor aria-hidden=true href=#2封裝動態數組邏輯>#</a></h2><p>這裡的「封裝動態數組邏輯」意思是將管理動態數組的資料和操作（比如插入元素、擴充容量等）整合在一個結構體中，這樣程式使用者就不需要關心這些細節操作，而只需要使用定義好的方法（例如 insert()）。</p><h4 id=為什麼這很有用>為什麼這很有用？<a hidden class=anchor aria-hidden=true href=#為什麼這很有用>#</a></h4><h4 id=a-簡化操作你不必自己每次插入數據前都檢查數組是否滿了也不需要手動擴容這些操作已經被封裝在-insert-方法裡調用一次就可以完成>a. 簡化操作：你不必自己每次插入數據前都檢查數組是否滿了，也不需要手動擴容。這些操作已經被封裝在 insert() 方法裡，調用一次就可以完成。<a hidden class=anchor aria-hidden=true href=#a-簡化操作你不必自己每次插入數據前都檢查數組是否滿了也不需要手動擴容這些操作已經被封裝在-insert-方法裡調用一次就可以完成>#</a></h4><h4 id=b-提升可讀性程式碼更容易閱讀和理解數據結構的操作被封裝到一個具體的結構體和方法中讓程式碼看起來清晰明了>b. 提升可讀性：程式碼更容易閱讀和理解。數據結構的操作被封裝到一個具體的結構體和方法中，讓程式碼看起來清晰明了。<a hidden class=anchor aria-hidden=true href=#b-提升可讀性程式碼更容易閱讀和理解數據結構的操作被封裝到一個具體的結構體和方法中讓程式碼看起來清晰明了>#</a></h4><h4 id=c-維護方便如果以後需要修改數組的邏輯比如改變擴容的方式你只需要在-insert-方法裡做修改這樣使用者的其他程式碼就不會受到影響>c. 維護方便：如果以後需要修改數組的邏輯（比如改變擴容的方式），你只需要在 insert() 方法裡做修改，這樣使用者的其他程式碼就不會受到影響。<a hidden class=anchor aria-hidden=true href=#c-維護方便如果以後需要修改數組的邏輯比如改變擴容的方式你只需要在-insert-方法裡做修改這樣使用者的其他程式碼就不會受到影響>#</a></h4><h4 id=d-總結來說封裝的目的是為了簡化數據操作讓代碼更加簡潔和可維護>d. 總結來說，封裝的目的是為了簡化數據操作，讓代碼更加簡潔和可維護。<a hidden class=anchor aria-hidden=true href=#d-總結來說封裝的目的是為了簡化數據操作讓代碼更加簡潔和可維護>#</a></h4><h2 id=3-有什麼與封裝相關的比喻嗎>3. 有什麼與封裝相關的比喻嗎？<a hidden class=anchor aria-hidden=true href=#3-有什麼與封裝相關的比喻嗎>#</a></h2><p>當你使用一台咖啡機時，你不需要知道它內部是如何加熱水、如何將水通過咖啡粉，甚至如何控制溫度和水壓。你只需要按下按鈕，咖啡機就會自動完成所有的複雜操作，並給你一杯咖啡。</p><p>封裝的概念：
+咖啡機內部的所有操作都被封裝起來，作為使用者，你只需調用簡單的「接口」（按下按鈕），而不需要理解或處理內部的細節。</p><p>當你駕駛汽車時，你不需要了解引擎如何運轉，也不需要知道每個零件是如何協同工作的。你只需要轉動方向盤、踩油門或剎車來控制汽車的行駛。</p><p>封裝的概念：
+汽車的複雜系統（引擎、傳動、制動系統等）都被封裝在車輛裡面。作為駕駛者，你透過簡單的控制（例如油門、剎車）來操作汽車，而不需要深入了解內部的運作方式。</p><h2 id=3-結構體是什麼>3. 結構體是什麼？<a hidden class=anchor aria-hidden=true href=#3-結構體是什麼>#</a></h2><h4 id=結構體的用途>結構體的用途：<a hidden class=anchor aria-hidden=true href=#結構體的用途>#</a></h4><p>結構體主要用於建模更複雜的實體或物件。例如：</p><p>表示人：Person 結構體可以包含人的名字、年齡、性別等信息。
+表示書籍：可以定義一個 Book 結構體，包含書名、作者、出版年份等屬性。
+表示座標：可以定義一個 Point 結構體，包含 x 和 y 兩個坐標點。</p><h4 id=與封裝的關係>與封裝的關係：<a hidden class=anchor aria-hidden=true href=#與封裝的關係>#</a></h4><p>結構體也經常與方法結合使用，這樣可以實現面向對象的封裝。通過定義方法，將操作與數據結合在一起，這樣使用者就可以通過方法來操作結構體的內部數據，並且數據的內部細節可以對外部程式隱藏。</p><h4 id=總結>總結：<a hidden class=anchor aria-hidden=true href=#總結>#</a></h4><p>結構體是用來組織和封裝多個屬性的工具，讓你能夠更有條理地處理和表示複雜的實體或數據。通過結構體，你可以將多個相關屬性打包在一起，並且可以為它們定義方法，實現封裝和數據操作。</p><h2 id=4-結構體與方法如何結合使用>4. 結構體與方法如何結合使用？<a hidden class=anchor aria-hidden=true href=#4-結構體與方法如何結合使用>#</a></h2><h4 id=1-定義結構體與方法>1. 定義結構體與方法<a hidden class=anchor aria-hidden=true href=#1-定義結構體與方法>#</a></h4><p>首先，我們定義一個結構體，並在這個結構體上定義一些方法來操作它的數據。
+package main</p><pre><code>import &quot;fmt&quot;
+
+// 定義一個結構體 Person
+type Person struct {
+    Name string
+    Age  int
+}
+
+// 為 Person 結構體定義一個方法，用來改變年齡
+func (p *Person) SetAge(newAge int) {
+    p.Age = newAge
+}
+
+// 為 Person 結構體定義另一個方法，用來輸出信息
+func (p *Person) Greet() {
+    fmt.Printf(&quot;Hi, I'm %s and I'm %d years old.\n&quot;, p.Name, p.Age)
+}
+
+func main() {
+    // 創建一個 Person 實例
+    person := Person{Name: &quot;Alice&quot;, Age: 30}
+
+    // 使用 Greet 方法來輸出訊息
+    person.Greet()  // 輸出: Hi, I'm Alice and I'm 30 years old.
+
+    // 使用 SetAge 方法來更改年齡
+    person.SetAge(31)
+
+    // 再次使用 Greet 方法來輸出訊息
+    person.Greet()  // 輸出: Hi, I'm Alice and I'm 31 years old.
+}
+</code></pre><p>解釋：
+結構體定義：Person 結構體包含兩個字段，Name 和 Age，用來表示人的名字和年齡。
+方法定義：方法是一個帶有「接收者」的函式。接收者是一個特定的類型，方法可以通過它來操作該類型的數據。這裡的 SetAge 和 Greet 方法都是針對 Person 結構體定義的。
+func (p *Person) SetAge(newAge int)：這個方法有一個接收者 p *Person，表示它是針對 Person 類型的物件。它可以修改該物件的 Age 字段。
+func (p *Person) Greet()：這個方法沒有任何參數，使用結構體內的數據來輸出訊息。
+方法呼叫：在 main() 函式中，我們創建了一個 Person 結構體的實例，並使用 SetAge 和 Greet 來修改和輸出該結構體的數據。</p><h4 id=2-為什麼要結合使用結構體與方法>2. 為什麼要結合使用結構體與方法？<a hidden class=anchor aria-hidden=true href=#2-為什麼要結合使用結構體與方法>#</a></h4><p>結合使用結構體和方法的主要原因是為了實現封裝，即將數據和操作數據的行為集中在一起，達到以下效果：</p><p>隱藏實現細節：外部程式不需要知道如何修改 Person 的年齡或打印信息，只需要呼叫方法即可。
+提高程式的可讀性與可維護性：方法名稱可以直觀地表達其作用，讓程式碼更加易讀。
+數據保護：通過提供方法來操作數據，你可以控制如何對結構體的字段進行操作，避免外部程式直接操作內部數據，防止意外修改。</p><h4 id=3-方法接收者的選擇>3. 方法接收者的選擇<a hidden class=anchor aria-hidden=true href=#3-方法接收者的選擇>#</a></h4><p>Go 的方法接收者可以是值類型或指標類型。接收者的選擇取決於你希望如何處理數據。</p><p>值接收者：如果方法不需要修改結構體中的數據，使用值接收者即可，這樣會傳遞一個結構體的副本。
+指標接收者：如果方法需要修改結構體中的數據，應使用指標接收者。這樣方法就可以直接修改原來的數據，而不會只修改副本。</p><p>範例：指標接收者和值接收者的區別</p><p>package main</p><p>import &ldquo;fmt&rdquo;</p><p>// 定義結構體 Person
+type Person struct {
+Name string
+Age int
+}</p><p>// 使用值接收者定義方法
+func (p Person) GreetValue() {
+p.Age = 99 // 嘗試修改年齡
+fmt.Printf(&ldquo;GreetValue: Hi, I&rsquo;m %s and I&rsquo;m %d years old.\n&rdquo;, p.Name, p.Age)
+}</p><pre><code>// 使用指標接收者定義方法
+func (p *Person) GreetPointer() {
+    p.Age = 99 // 嘗試修改年齡
+    fmt.Printf(&quot;GreetPointer: Hi, I'm %s and I'm %d years old.\n&quot;, p.Name, p.Age)
+}
+
+func main() {
+    person := Person{Name: &quot;Bob&quot;, Age: 20}
+
+    // 使用值接收者方法，無法改變原來的值
+    person.GreetValue()   // 輸出: Hi, I'm Bob and I'm 99 years old.
+    fmt.Println(person.Age) // 輸出: 20
+
+    // 使用指標接收者方法，可以改變原來的值
+    person.GreetPointer() // 輸出: Hi, I'm Bob and I'm 99 years old.
+    fmt.Println(person.Age) // 輸出: 99
+}
+</code></pre><p>解釋：
+值接收者 (GreetValue)：當我們使用值接收者時，方法內的修改只影響結構體的副本，不會改變原來的數據。
+指標接收者 (GreetPointer)：當我們使用指標接收者時，方法內的修改直接影響原來的結構體數據，因此會反映在主程式中。</p><h4 id=總結-1>總結：<a hidden class=anchor aria-hidden=true href=#總結-1>#</a></h4><p>結構體與方法的結合使用是 Go 語言中實現封裝的主要方式。方法允許你對結構體中的數據進行操作，同時隱藏實現細節，保持程式碼的簡潔性和易維護性。透過使用指標接收者，你可以直接修改結構體的數據，而值接收者則僅作用於副本，無法改變原數據。</p><h2 id=5-具體比喻>5. 具體比喻？<a hidden class=anchor aria-hidden=true href=#5-具體比喻>#</a></h2><h4 id=房子與房主的比喻>房子與房主的比喻<a hidden class=anchor aria-hidden=true href=#房子與房主的比喻>#</a></h4><p>把結構體想像成一棟房子，它有不同的屬性，例如房子的顏色、大小、樓層數等。而方法則是房主用來操作這些屬性的工具。房主可以通過這些方法來改變房子的狀態。</p><p>結構體 House：代表一棟房子，包含房子的屬性，如顏色和大小。
+方法 Paint()：這是一個「油漆房子」的方法，它可以改變房子的顏色。
+方法 Renovate()：這是一個「翻新房子」的方法，讓你可以改變房子的大小。</p><p>具體代碼對應：
+package main</p><pre><code>import &quot;fmt&quot;
+
+// 定義房子結構體
+type House struct {
+    Color string
+    Size  int // 房子的大小
+}
+
+// 定義一個改變房子顏色的方法
+func (h *House) Paint(newColor string) {
+    h.Color = newColor
+    fmt.Printf(&quot;房子被漆成了 %s 色。\n&quot;, h.Color)
+}
+
+// 定義一個翻新房子的大小的方法
+func (h *House) Renovate(newSize int) {
+    h.Size = newSize
+    fmt.Printf(&quot;房子的大小被改為 %d 平方米。\n&quot;, h.Size)
+}
+
+func main() {
+    // 建立一個房子實例
+    myHouse := House{Color: &quot;白色&quot;, Size: 100}
+
+    // 呼叫方法改變房子的顏色
+    myHouse.Paint(&quot;紅色&quot;)  // 輸出: 房子被漆成了 紅色。
+
+    // 呼叫方法改變房子的大小
+    myHouse.Renovate(200) // 輸出: 房子的大小被改為 200 平方米。
+}
+</code></pre><p>解釋：</p><p>結構體 House：就像一棟房子，包含顏色和大小的屬性。
+方法 Paint() 和 Renovate()：就像房子的操作功能，可以通過這些方法來改變房子的顏色或大小，而不需要手動改變房子的屬性。這樣你只需告訴房子去「漆顏色」或「翻新」，它會自己處理細節。</p><h2 id=6-為什麼這裡沒有接收dynamicarray卻可以直接回傳dynamicarray的地址>6. 為什麼這裡沒有接收DynamicArray卻可以直接回傳DynamicArray的地址？<a hidden class=anchor aria-hidden=true href=#6-為什麼這裡沒有接收dynamicarray卻可以直接回傳dynamicarray的地址>#</a></h2><p>在這裡，DynamicArray 是在函數內部初始化的局部變數，但我們可以安全地回傳它的地址，並在外部使用。這是因為 Go 的逃逸分析（escape analysis）機制。</p><h4 id=1-逃逸分析escape-analysis>1. 逃逸分析（Escape Analysis）：<a hidden class=anchor aria-hidden=true href=#1-逃逸分析escape-analysis>#</a></h4><p>Go 的編譯器會自動判斷一個變數是否會在函數返回後仍然被使用。如果是這樣，Go 編譯器會將這個變數分配在堆上（heap），而不是在堆疊上（stack），即使它是函數內部的局部變數。</p><p>在你的 initArray 函數中，DynamicArray 是局部變數，但因為你回傳了它的指標（&amp;DynamicArray{}），Go 編譯器知道這個變數需要在函數執行完畢後繼續存在，因此它會自動將這個變數分配到堆上，保證它在函數外部依然有效。</p><h4 id=2-局部變數的生命周期>2. 局部變數的生命周期：<a hidden class=anchor aria-hidden=true href=#2-局部變數的生命周期>#</a></h4><p>在許多程式語言中，局部變數在函數返回後會被銷毀，但在 Go 中，通過指標回傳的變數只要有其他地方引用它，編譯器會確保它的生命周期足夠長，能夠在函數之外繼續存在。</p><p>具體解釋 &amp;DynamicArray{} 的運作：
+&amp;DynamicArray{} 這一行會初始化一個 DynamicArray 的實例，並返回它的地址。雖然這個實例是在 initArray 函數內部創建的，但它的指標會被返回到函數外部。
+Go 的編譯器自動處理這種情況，使這個 DynamicArray 的記憶體不會在函數結束時被釋放，因為它的指標還在外部被使用。</p><h4 id=3-為什麼不需要明確傳入-dynamicarray>3. 為什麼不需要明確傳入 DynamicArray？<a hidden class=anchor aria-hidden=true href=#3-為什麼不需要明確傳入-dynamicarray>#</a></h4><p>在這個場景中，DynamicArray 是由 initArray 函數來初始化的，而不是作為參數傳入。這裡的邏輯是「創建一個新的動態數組並回傳其地址」，因此不需要從外部傳入現有的 DynamicArray。該函數的設計是負責初始化和分配一個新的 DynamicArray，因此它自己創建並返回這個結構體的指標。</p><h4 id=小結>小結：<a hidden class=anchor aria-hidden=true href=#小結>#</a></h4><p>Go 會自動處理局部變數的記憶體管理，如果一個局部變數的指標需要在函數之外使用，Go 會將該變數分配到堆上，保證其在外部依然有效。
+&amp;DynamicArray{} 創建了一個新的 DynamicArray，並返回它的指標，即使是在函數內部創建的變數，它依然可以安全地在外部使用，這是 Go 的逃逸分析機制的結果。
+這樣的機制簡化了開發過程，讓開發者不用擔心手動管理變數的記憶體分配和釋放。</p><h2 id=7-go-編譯器會根據變數的使用情況決定變數是分配在堆疊stack還是堆heap上>7. Go 編譯器會根據變數的使用情況，決定變數是分配在「堆疊」（stack）還是「堆」（heap）上<a hidden class=anchor aria-hidden=true href=#7-go-編譯器會根據變數的使用情況決定變數是分配在堆疊stack還是堆heap上>#</a></h2><h3 id=具體解釋>具體解釋：<a hidden class=anchor aria-hidden=true href=#具體解釋>#</a></h3><h4 id=堆疊stack>堆疊（Stack）：<a hidden class=anchor aria-hidden=true href=#堆疊stack>#</a></h4><p>當函數被呼叫時，局部變數通常會被分配在「堆疊」上，堆疊是函數的臨時記憶體空間。當函數返回時，堆疊上的記憶體會自動釋放。
+如果變數只在函數內部使用，編譯器會將它放在堆疊上，這樣函數結束後記憶體就不再被保留。</p><h4 id=堆heap>堆（Heap）：<a hidden class=anchor aria-hidden=true href=#堆heap>#</a></h4><p>如果某個變數的指標在函數結束後還需要繼續使用，Go 編譯器會將這個變數分配在「堆」上，這是一種全局的記憶體空間，函數返回後也不會立即釋放記憶體。
+這樣做是為了保證該變數在函數結束後仍然可以被安全地引用。</p><h4 id=為什麼這很重要>為什麼這很重要？<a hidden class=anchor aria-hidden=true href=#為什麼這很重要>#</a></h4><p>在 Go 中，如果你在函數內部創建了一個變數，然後把它的指標返回出去，編譯器會自動將這個變數放在堆上，而不是堆疊上，這樣即使函數返回後，該變數依然可以在外部使用。這個過程稱為逃逸分析。</p><pre><code>func createNumber() *int {
+    n := 42
+    return &amp;n  // 返回 n 的指標
+}
+</code></pre><p>在這段程式碼中，n 是 createNumber 函數內部的變數。如果 Go 將 n 放在堆疊上，那麼當 createNumber 函數結束時，n 所佔用的記憶體會被釋放，這樣返回的指標將指向一個無效的記憶體位置。</p><p>為了避免這個問題，Go 編譯器會檢查 n 是否在函數外部被使用（即它的指標被返回了），並決定將 n 放在堆上，這樣即使函數結束，n 仍然可以安全地被外部程式使用。</p><h4 id=總結-2>總結：<a hidden class=anchor aria-hidden=true href=#總結-2>#</a></h4><p>當局部變數需要在函數結束後依然存在時，Go 編譯器會將該變數分配到「堆」上，而不是在函數結束時釋放的「堆疊」上。
+這樣做可以確保變數的指標在外部使用時是安全的，不會指向無效的記憶體位置。
+這樣你可以放心地返回局部變數的指標，而不用擔心記憶體被提前釋放。</p></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=http://localhost:1313/blog/%E5%A5%87%E5%A6%99%E7%9A%84%E4%B8%80%E7%94%9F%E6%91%98%E6%8A%84%E8%AE%80%E5%BE%8C%E7%B8%BD%E7%B5%90%E5%BF%83%E5%BE%97%E7%96%91%E5%95%8F/><span class=title>« Prev</span><br><span></span></a></nav><ul class=share-buttons><li><a target=_blank rel="noopener noreferrer" aria-label="share  on x" href="https://x.com/intent/tweet/?text=&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f&amp;hashtags="><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share  on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f&amp;title=&amp;summary=&amp;source=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share  on reddit" href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f&title="><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share  on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share  on whatsapp" href="https://api.whatsapp.com/send?text=%20-%20http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share  on telegram" href="https://telegram.me/share/url?text=&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f"><svg viewBox="2 2 28 28" height="30" width="30" fill="currentcolor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share  on ycombinator" href="https://news.ycombinator.com/submitlink?t=&u=http%3a%2f%2flocalhost%3a1313%2fblog%2f%25E5%258B%2595%25E6%2585%258B%25E9%2599%25A3%25E5%2588%2597%25E7%259A%2584%25E5%25AF%25A6%25E4%25BD%259C%2f"><svg width="30" height="30" viewBox="0 0 512 512" fill="currentcolor" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"/></svg></a></li></ul></footer></article></main><footer class=footer><span>&copy; 2024 <a href=http://localhost:1313/>Anny Shih</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
