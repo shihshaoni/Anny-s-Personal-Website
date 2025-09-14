@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>結構地圖生成器 · Three-Act + Seven-Point</title>
+<meta name="description" content="將大綱/章節貼上，一鍵產生三幕劇、七點敘事、角色關係與 Mermaid 節點圖。純前端、零安裝。">
+<style>
+  :root{
+    --bg:#0e1116; --panel:#151b23; --text:#e9eef6; --muted:#a7b0bf;
+    --accent:#6aa6ff; --ok:#57e6b6; --warn:#ffd084; --err:#ff8a8a;
+    --br:14px; --shadow:0 14px 36px rgba(0,0,0,.35); --max:1200px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:linear-gradient(180deg,#0c1015,#0f1521);color:var(--text);
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans TC","Helvetica Neue",Arial}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+  header{margin:8px 0 18px}
+  h1{margin:.2em 0 .2em;font-size:clamp(24px,4.8vw,38px)}
+  p.lead{color:var(--muted);max-width:900px;margin:.2em 0 1em}
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:980px){ .grid{grid-template-columns:1.1fr .9fr} }
+  .card{background:var(--panel);border:1px solid #202938;border-radius:var(--br);box-shadow:var(--shadow);padding:16px}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  textarea{width:100%;min-height:260px;border:1px solid #22314a;border-radius:12px;background:#0f141c;color:var(--text);
+    padding:12px;resize:vertical}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  button{border:1px solid #29446d;background:#121a26;color:var(--text);padding:10px 14px;border-radius:10px;cursor:pointer}
+  button.primary{background:linear-gradient(135deg,#3e79ff,#6ba4ff);border-color:transparent;color:#0a1020;font-weight:700}
+  button.ghost{background:transparent}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #2a3344;color:var(--muted)}
+  h2{margin:.4em 0 .4em;font-size:20px}
+  .muted{color:var(--muted)}
+  .list{display:grid;gap:8px}
+  .k{font-size:13px;color:var(--muted)}
+  pre.code{background:#0f141c;border:1px solid #22314a;border-radius:10px;padding:10px;overflow:auto;white-space:pre-wrap}
+  .cols{display:grid;gap:10px;grid-template-columns:1fr}
+  @media(min-width:720px){ .cols{grid-template-columns:1fr 1fr} }
+  .badge{font-size:12px;padding:3px 8px;border-radius:8px;background:rgba(94,166,255,.14);border:1px solid rgba(94,166,255,.4);color:#cfe0ff}
+  .stat{display:grid;grid-template-columns:auto 1fr;gap:6px;font-size:14px}
+  .footer{border-top:1px solid #1f2634;margin-top:20px;padding-top:16px;color:var(--muted);font-size:13px}
+  .hint{font-size:12px;color:var(--muted)}
+  .copy{margin-left:auto}
+  .small{font-size:12px}
+</style>
+<!-- Mermaid for live diagram preview (有網路時自動載入；離線仍可使用原始碼) -->
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.mermaid) {
+      mermaid.initialize({ startOnLoad:false, theme:'dark', fontFamily:'system-ui' });
+    }
+  });
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">Structure Map Generator · Three-Act × Seven-Point × Character Graph</span>
+    <h1>結構地圖生成器</h1>
+    <p class="lead">將你的大綱或章節貼上，一鍵產生 <b>三幕劇</b> / <b>七點敘事</b> 與 <b>角色關係圖</b>。純前端、零安裝、可匯出 JSON 與 Mermaid。<span class="hint">（若無法預覽圖，仍可複製 Mermaid 原始碼到任何支援的編輯器）</span></p>
+  </header>
+
+  <div class="grid">
+    <!-- 左：輸入與操作 -->
+    <section class="card" aria-label="輸入與操作">
+      <h2>輸入文本</h2>
+      <p class="muted small">建議包含：主要角色、衝突、目標、關鍵事件。支援中文/英文。</p>
+      <textarea id="input" placeholder="貼上你的故事大綱 / 前幾章內容...
+範例：
+李牧是城裡的修表匠，某日接到一只指向過去的懷錶；他用它拯救妹妹，卻引來時間警察追捕……"></textarea>
+      <div class="controls">
+        <button class="primary" id="analyzeBtn">分析並產生地圖</button>
+        <button id="clearBtn">清空</button>
+        <span class="pill" id="statsPill">字數：0 · 句子：0</span>
+      </div>
+      <details class="card" style="background:#0f141c">
+        <summary><b>進階參數</b>（可略過）</summary>
+        <div class="cols" style="margin-top:8px">
+          <div>
+            <label class="small">角色識別靈敏度（1–3，數字越大越嚴格）</label><br>
+            <input id="nameSensitivity" type="range" min="1" max="3" value="2" />
+          </div>
+          <div>
+            <label class="small">三幕分割比例（Act I / II / III，預設 25/50/25）</label><br>
+            <input id="ratio" type="text" value="25/50/25" />
+          </div>
+        </div>
+        <p class="hint">此 MVP 使用啟發式規則（不依賴雲端 API）。你可將輸出 JSON 餵給任意 LLM 做更高階重寫。</p>
+      </details>
+    </section>
+
+    <!-- 右：輸出 -->
+    <section class="card" aria-label="輸出">
+      <div class="row">
+        <h2 style="margin-right:auto">輸出</h2>
+        <button id="copyJson" class="ghost small">複製 JSON</button>
+        <button id="downloadJson" class="ghost small">下載 JSON</button>
+      </div>
+
+      <div class="list">
+        <div>
+          <h3>三幕劇（Three-Act）</h3>
+          <div id="acts" class="list"></div>
+        </div>
+        <div>
+          <h3>七點敘事（Seven-Point）</h3>
+          <div id="seven" class="list"></div>
+        </div>
+        <div class="cols">
+          <div>
+            <h3>角色清單</h3>
+            <div id="chars" class="list"></div>
+          </div>
+          <div>
+            <h3>角色關係（共現）</h3>
+            <div id="pairs" class="list"></div>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <h3 style="margin-right:auto">Mermaid 圖（流程/關係）</h3>
+            <button id="copyMermaid" class="ghost small">複製 Mermaid</button>
+          </div>
+          <pre id="mermaidCode" class="code"></pre>
+          <div id="mermaidRender" class="card" style="background:#0f141c"></div>
+          <p class="hint">若上方無法顯示圖，請直接複製 Mermaid 原始碼，貼到 mermaid.live 或你的筆記工具中。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer small">
+    本工具為啟發式 MVP：透過分句、斷段、詞頻與共現推測結構與角色，供作家快速形成「藍圖」。建議後續以人類編輯或 LLM 精修。
+  </div>
+</div>
+
+<script>
+/* ========= 小工具 ========= */
+const $ = s => document.querySelector(s);
+const setHTML = (el, html) => el.innerHTML = html;
+const escape = s => s.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+const sentences = (text) => text
+  .replace(/\r/g,'')
+  .split(/(?<=[。！？!?．\.])\s+|\n+/)
+  .map(s=>s.trim()).filter(Boolean);
+const words = t => t.split(/\s+|[，、。；；：:,.!?()「」『』“”"'\-—]/).filter(Boolean);
+
+/* ========= 角色抽取（啟發式） =========
+   1) 連續的兩個以上字母/漢字片段，首字母或整段常出現 → 候選名
+   2) 排除常見詞（中文/英文） */
+const COMMON = new Set(['的','了','和','他','她','它','我','你','在','到','是','有','與','及','並','就','而','又','也','被','於',
+  'the','and','you','they','them','her','him','she','he','it','we','a','to','of','in','on','for','with','as','at','by','from']);
+function extractCharacters(text, sensitivity=2){
+  const toks = words(text);
+  const freq = new Map();
+  for(const w of toks){
+    const clean = w.trim();
+    if(!clean) continue;
+    const isLatin = /^[A-Za-z][A-Za-z\-']*$/.test(clean);
+    const isCJK = /^[\u4E00-\u9FFF]{2,}$/.test(clean); // 兩字以上漢字
+    if(!(isLatin || isCJK)) continue;
+    const key = clean;
+    if(COMMON.has(key.toLowerCase())) continue;
+    freq.set(key, (freq.get(key)||0)+1);
+  }
+  // 門檻：敏感度越高，門檻越高
+  const minFreq = sensitivity===1? 2 : sensitivity===2? 3 : 4;
+  let cands = [...freq.entries()].filter(([k,v])=>v>=minFreq);
+  // 合併大小寫變體（英文名）
+  const mapLC = new Map();
+  for(const [k,v] of cands){
+    const lc = k.toLowerCase();
+    const prev = mapLC.get(lc);
+    if(prev){ prev.names.push(k); prev.count+=v; }
+    else mapLC.set(lc, {base:k, names:[k], count:v});
+  }
+  // 回傳按頻率排序
+  return [...mapLC.values()].sort((a,b)=>b.count-a.count).map(x=>({name:x.names.sort((a,b)=>b.length-a.length)[0], count:x.count}));
+}
+
+/* ========= 共現關係（同句/同段出現次數） ========= */
+function cooccurrence(text, charList){
+  const paras = text.split(/\n{2,}/).map(p=>p.trim()).filter(Boolean);
+  const pairs = new Map();
+  function add(a,b){ if(a===b) return; const key = a<b? `${a}||${b}`:`${b}||${a}`; pairs.set(key,(pairs.get(key)||0)+1); }
+  for(const p of paras){
+    for(let i=0;i<charList.length;i++){
+      for(let j=i+1;j<charList.length;j++){
+        const a = charList[i].name, b = charList[j].name;
+        const hasA = p.includes(a), hasB = p.includes(b);
+        if(hasA && hasB) add(a,b);
+      }
+    }
+  }
+  return [...pairs.entries()].map(([k,v])=>{
+    const [a,b]=k.split('||'); return {a,b,weight:v};
+  }).sort((x,y)=>y.weight-x.weight);
+}
+
+/* ========= 三幕/七點 推導（啟發式） ========= */
+function splitActs(text, ratioStr='25/50/25'){
+  const sents = sentences(text);
+  const [a,b,c] = ratioStr.split('/').map(x=>Math.max(5, parseInt(x.trim(),10)||0));
+  const total = a+b+c;
+  const cut1 = Math.round(sents.length * (a/total));
+  const cut2 = Math.round(sents.length * ((a+b)/total));
+  return [
+    {label:'Act I · Setup',      range:[0,cut1],      summary: summarize(sents.slice(0,cut1).join(' '))},
+    {label:'Act II · Confront.', range:[cut1,cut2],   summary: summarize(sents.slice(cut1,cut2).join(' '))},
+    {label:'Act III · Resolve',  range:[cut2,sents.length], summary: summarize(sents.slice(cut2).join(' '))}
+  ];
+}
+
+function sevenPoint(text){
+  // 粗略用位置 + 關鍵線索抽詞 生成草案
+  const s = sentences(text), n = s.length;
+  function seg(t0,t1){ return summarize(s.slice(t0,t1).join(' ')); }
+  const pts = [
+    {key:'Hook（鉤子/現狀）',        brief: seg(0, Math.max(1,Math.floor(n*0.1)))},
+    {key:'Inciting（誘發事件）',     brief: seg(Math.floor(n*0.1), Math.floor(n*0.2))},
+    {key:'First Plot Point（進入第二幕）', brief: seg(Math.floor(n*0.18), Math.floor(n*0.3))},
+    {key:'Midpoint（逆轉/主動）',     brief: seg(Math.floor(n*0.45), Math.floor(n*0.55))},
+    {key:'Second Plot Point（最黑暗時刻）', brief: seg(Math.floor(n*0.6), Math.floor(n*0.72))},
+    {key:'Climax（高潮抉擇）',        brief: seg(Math.floor(n*0.78), Math.floor(n*0.9))},
+    {key:'Resolution（收束/新常態）',   brief: seg(Math.floor(n*0.9), n)}
+  ];
+  return pts;
+}
+
+/* ========= 簡易摘要（取關鍵詞 + 前後句融合） ========= */
+function summarize(text){
+  if(!text) return '(內容過短)';
+  const toks = words(text).map(w=>w.toLowerCase());
+  const stop = new Set([...COMMON,'這','那','與','對','於','或','及','之','其','以及','如果','但是','因為','所以','而且','然後']);
+  const freq = new Map();
+  for(const w of toks){ if(!stop.has(w) && w.length>1) freq.set(w,(freq.get(w)||0)+1); }
+  const top = [...freq.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6).map(x=>x[0]);
+  const sent = sentences(text);
+  let head = sent.slice(0,2).join(' ');
+  let tail = sent.slice(-1)[0]||'';
+  return (head+' … '+tail + (top.length? ` ｜關鍵：${top.join(', ')}`:'' )).trim();
+}
+
+/* ========= Mermaid 生成 ========= */
+function buildMermaid(acts, seven, chars, edges){
+  // Flowchart：上方三幕 → 下方七點；右側角色關係
+  let m = `flowchart TB
+classDef act fill:#162135,stroke:#345ca8,color:#cfe0ff,rx:8,ry:8
+classDef beat fill:#1a2433,stroke:#2f3a4d,color:#dfe7ff,rx:8,ry:8
+classDef role fill:#172227,stroke:#2e5148,color:#cfeee0,rx:8,ry:8
+
+subgraph A[Three-Act]
+A1["${acts[0].label}"]:::act
+A2["${acts[1].label}"]:::act
+A3["${acts[2].label}"]:::act
+A1-->A2-->A3
+end
+
+subgraph B[Seven-Point]
+B1["Hook"]:::beat-->B2["Inciting"]:::beat-->B3["1st Plot"]:::beat-->B4["Midpoint"]:::beat-->B5["2nd Plot"]:::beat-->B6["Climax"]:::beat-->B7["Resolution"]:::beat
+end
+
+A3---B6
+`;
+  if(chars.length){
+    m += `subgraph C[Characters]
+`;
+    chars.slice(0,10).forEach((c,i)=>{
+      m += `C${i}["${c.name} (${c.count})"]:::role
+`;
+    });
+    m += `end
+`;
+    // edges by weight
+    edges.slice(0,12).forEach((e,idx)=>{
+      const ai = chars.findIndex(c=>c.name===e.a);
+      const bi = chars.findIndex(c=>c.name===e.b);
+      if(ai>-1 && bi>-1) m += `C${ai} -.- |${e.weight}| C${bi}
+`;
+    });
+  }
+  return m;
+}
+
+/* ========= UI 綁定 ========= */
+const inputEl = $('#input'), statsPill = $('#statsPill');
+function updateStats(){
+  const s = inputEl.value.trim();
+  const sent = sentences(s).length;
+  const wc = words(s).length;
+  statsPill.textContent = `字數：${wc} · 句子：${sent}`;
+}
+inputEl.addEventListener('input', ()=>{
+  updateStats();
+  localStorage.setItem('smg_text', inputEl.value);
+});
+$('#clearBtn').addEventListener('click', ()=>{
+  inputEl.value=''; updateStats(); localStorage.removeItem('smg_text');
+  renderAll({acts:[],seven:[],chars:[],edges:[],mermaid:''});
+});
+
+function renderList(elId, items, formatter){
+  const el = $(elId);
+  if(!items || !items.length){ setHTML(el,'<div class="muted small">（無資料）</div>'); return; }
+  setHTML(el, items.map(formatter).join(''));
+}
+
+function renderAll(data){
+  renderList('#acts', data.acts, (a,i)=>`<div class="card"><div class="stat"><strong>${a.label}</strong> <span class="muted">片段摘要：</span></div><div class="small muted">${escape(a.summary)}</div></div>`);
+  renderList('#seven', data.seven, (p,i)=>`<div class="card"><strong>${p.key}</strong><div class="small muted">${escape(p.brief)}</div></div>`);
+  renderList('#chars', data.chars, (c)=>`<div class="card"><strong>${escape(c.name)}</strong><div class="small muted">出現：${c.count}</div></div>`);
+  renderList('#pairs', data.edges, (e)=>`<div class="card"><strong>${escape(e.a)}</strong> ↔ <strong>${escape(e.b)}</strong><div class="small muted">共現：${e.weight}</div></div>`);
+  $('#mermaidCode').textContent = data.mermaid || '(尚未生成)';
+  const r = $('#mermaidRender');
+  r.innerHTML = '';
+  if(window.mermaid && data.mermaid){
+    try{
+      const id = 'mmd_'+Math.random().toString(36).slice(2);
+      const c = document.createElement('div');
+      c.className='mermaid'; c.id=id; c.textContent = data.mermaid;
+      r.appendChild(c);
+      window.mermaid.init(undefined, '#'+id);
+    }catch(err){
+      r.innerHTML = `<div class="muted small">預覽失敗，請改用上方 Mermaid 原始碼於 mermaid.live 開啟。</div>`;
+    }
+  }else{
+    r.innerHTML = `<div class="muted small">（離線或無 Mermaid 腳本時不顯示預覽，仍可複製上方原始碼）</div>`;
+  }
+}
+
+$('#analyzeBtn').addEventListener('click', ()=>{
+  const text = inputEl.value.trim();
+  if(!text){ alert('請先貼上大綱或章節內容'); return; }
+  const sens = parseInt($('#nameSensitivity').value,10)||2;
+  const ratio = $('#ratio').value || '25/50/25';
+  const acts = splitActs(text, ratio);
+  const seven = sevenPoint(text);
+  const chars = extractCharacters(text, sens).slice(0,20);
+  const edges = cooccurrence(text, chars).slice(0,30);
+  const mermaid = buildMermaid(acts, seven, chars, edges);
+  const data = {acts, seven, chars, edges, mermaid, meta:{ratio, sens, ts:Date.now()}};
+  renderAll(data);
+  localStorage.setItem('smg_last', JSON.stringify(data));
+});
+
+$('#copyJson').addEventListener('click', ()=>{
+  const data = localStorage.getItem('smg_last');
+  if(!data){ alert('尚無分析結果'); return; }
+  navigator.clipboard.writeText(data).then(()=>alert('已複製 JSON'));
+});
+$('#downloadJson').addEventListener('click', ()=>{
+  const data = localStorage.getItem('smg_last');
+  if(!data){ alert('尚無分析結果'); return; }
+  const blob = new Blob([data], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'structure-map.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+$('#copyMermaid').addEventListener('click', ()=>{
+  const code = $('#mermaidCode').textContent.trim();
+  if(!code){ alert('尚無 Mermaid 原始碼'); return; }
+  navigator.clipboard.writeText(code).then(()=>alert('已複製 Mermaid 原始碼'));
+});
+
+/* ========= 初始化 ========= */
+(function init(){
+  const saved = localStorage.getItem('smg_text');
+  if(saved){ inputEl.value = saved; }
+  updateStats();
+  const last = localStorage.getItem('smg_last');
+  if(last){ try{ renderAll(JSON.parse(last)); }catch{} }
+})();
+</script>
+</body>
+</html>

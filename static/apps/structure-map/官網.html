@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Novel Companion — 小說家專用敘事架構 + AI 編輯器服務</title>
+  <meta name="description" content="Basic / Pro / Premium 三層方案：解決卡關、整理故事結構、全稿編修。用免費工具交付，先付款再開始。">
+  <style>
+    :root{
+      --bg:#0d0f13; --card:#12151b; --muted:#a7b0bf; --text:#e9eef7;
+      --accent:#5ea1ff; --accent-2:#9bff9e; --warn:#ffc56e; --ok:#52e2c0;
+      --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:1080px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0d11, #0f1320);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans TC","Helvetica Neue",Arial}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    header{padding:36px 0 12px}
+    .badge{display:inline-block;padding:6px 10px;border:1px solid #22304a;border-radius:999px;color:var(--muted);font-size:12px;letter-spacing:.4px}
+    h1{margin:.6em 0 .2em;font-size:clamp(28px,5vw,44px);line-height:1.15}
+    p.lead{color:var(--muted);max-width:760px;margin:8px 0 24px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
+    .btn{padding:12px 18px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;border:1px solid #24406b;background:#141a24;color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,#3e79ff,#6ba4ff);border-color:transparent;color:#081018;font-weight:700}
+    .btn.ghost{background:transparent}
+    .note{font-size:13px;color:var(--muted)}
+
+    /* Pricing grid */
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin:28px 0}
+    @media(min-width:860px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    .card{background:var(--card);border:1px solid #1f2634;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;display:flex;flex-direction:column}
+    .card .tag{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .card h3{margin:.1em 0 .1em;font-size:22px}
+    .price{font-size:30px;margin:6px 0 10px}
+    .price small{font-size:13px;color:var(--muted)}
+    .value{color:var(--muted);font-size:14px;margin-bottom:12px}
+    ul.features{margin:12px 0 18px;padding-left:20px}
+    ul.features li{margin:6px 0}
+    .pick{margin-top:auto}
+    .card.pop{border:1px solid #345ca8; background:linear-gradient(180deg,#131a27,#12151b)}
+    .flag{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(94,161,255,.12);color:#bcd6ff;border:1px solid rgba(94,161,255,.3);margin-bottom:10px}
+
+    /* Utility sections */
+    section{margin:40px 0}
+    .kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(min-width:860px){ .kpis{grid-template-columns:repeat(4,1fr)} }
+    .kpi{background:rgba(255,255,255,.03);border:1px solid #1f2634;border-radius:12px;padding:14px;text-align:center}
+    .kpi b{font-size:20px;display:block}
+    details{background:rgba(255,255,255,.03);border:1px solid #1f2634;border-radius:10px;padding:12px}
+    details+details{margin-top:10px}
+
+    footer{border-top:1px solid #1f2634;margin-top:30px;padding:24px 0;color:var(--muted);font-size:13px}
+    .mono{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Novel Companion · 敘事架構 × AI 編輯顧問</span>
+      <h1>把你的小說，從卡關到出版級。</h1>
+      <p class="lead">三層方案（Basic / Pro / Premium），解決：<b>寫不下去</b>、<b>結構混亂</b>、<b>編輯痛苦</b>。全程用免費工具交付（Google Docs / Notion / Canva），<u>先付款再開始</u>，明確範圍與交期。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#pricing" aria-label="查看價格與方案">💳 查看價格與方案</a>
+        <a class="btn ghost" href="#samples" aria-label="查看交付樣本">📄 下載範例報告</a>
+      </div>
+      <div class="note">付款支援 Stripe / PayPal。若未能於承諾時間內交付，原路退款。</div>
+    </header>
+
+    <!-- KPIs / Trust -->
+    <section aria-label="成效與信任指標">
+      <div class="kpis">
+        <div class="kpi"><b>3–5 天</b><span class="muted">Basic 交付</span></div>
+        <div class="kpi"><b>1–2 週</b><span class="muted">Pro 交付</span></div>
+        <div class="kpi"><b>2–4 週</b><span class="muted">Premium 交付</span></div>
+        <div class="kpi"><b>先付款</b><span class="muted">再啟動服務</span></div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" aria-label="價格與方案">
+      <h2>Pricing — 三種深度，解決三個痛點</h2>
+      <div class="grid" role="list">
+        <!-- Basic -->
+        <article class="card" role="listitem">
+          <div class="tag">Basic</div>
+          <h3>Writer’s Block Buster</h3>
+          <div class="price">$49–79 <small>/ 一次性</small></div>
+          <p class="value">被卡住？給你 3–5 條可實作的劇情走向與下一步寫作指南。</p>
+          <ul class="features">
+            <li>單章節 / 片段（≤ 5,000 字）分析</li>
+            <li>3–5 種劇情走向 + 關鍵衝突/動機提示</li>
+            <li>基本一致性 / 時序檢查</li>
+            <li>1 頁 PDF「下一步寫作指南」</li>
+            <li>交付：3–5 天 · Google Docs / Canva PDF</li>
+          </ul>
+          <div class="pick">
+            <a class="btn" href="https://buy.stripe.com/test_basic" aria-label="立即購買 Basic">👉 立即購買 Basic</a>
+          </div>
+        </article>
+
+        <!-- Pro (Most popular) -->
+        <article class="card pop" role="listitem">
+          <span class="flag">⭐ Most Popular</span>
+          <div class="tag">Pro</div>
+          <h3>Story Architecture Map</h3>
+          <div class="price">$149–299 <small>/ 一次性</small></div>
+          <p class="value">把零散設定變成一張清晰的故事藍圖，避免中途崩壞。</p>
+          <ul class="features">
+            <li>大綱或前 3–5 章（≤ 20,000 字）</li>
+            <li>三幕劇 / 七點故事結構對照</li>
+            <li>人物關係圖（Canva / Notion）</li>
+            <li>世界觀資料庫模板（Notion）</li>
+            <li>30 分鐘線上諮詢（Zoom / Meet）</li>
+            <li>交付：1–2 週 · Docs / Notion / PDF</li>
+          </ul>
+          <div class="pick">
+            <a class="btn primary" href="https://buy.stripe.com/test_pro" aria-label="立即購買 Pro">🚀 立即購買 Pro</a>
+          </div>
+        </article>
+
+        <!-- Premium -->
+        <article class="card" role="listitem">
+          <div class="tag">Premium</div>
+          <h3>Full Manuscript Editing Assistant</h3>
+          <div class="price">$499–999+ <small>/ 專案制</small></div>
+          <p class="value">接近出版等級的全稿建議，價格遠低於傳統編輯。</p>
+          <ul class="features">
+            <li>完整稿件（≤ 80,000 字）全稿分析</li>
+            <li>一致性 / 結構 / 節奏 / 文風優化建議（逐章）</li>
+            <li>修改進度看板（Notion）</li>
+            <li>角色傳記卡 & 世界觀百科（選配）</li>
+            <li>2 次 45 分鐘深度會議</li>
+            <li>交付：2–4 週 · Docs / Notion / PDF</li>
+          </ul>
+          <div class="pick">
+            <a class="btn" href="https://buy.stripe.com/test_premium_deposit" aria-label="支付 Premium 訂金">💼 支付訂金，預約開案</a>
+          </div>
+        </article>
+      </div>
+      <div class="note">所有方案皆為先付款後開始。Premium 可分 2 期：50% 訂金 + 交付前尾款。</div>
+    </section>
+
+    <!-- Samples -->
+    <section id="samples" aria-label="範例與流程">
+      <h2>交付範例 & 服務流程</h2>
+      <p class="lead">下載示例，看看實際你會拿到什麼：</p>
+      <ul>
+        <li>📄 <a href="#" aria-label="下載 Basic 範例 PDF">Basic 範例報告（PDF）</a></li>
+        <li>📄 <a href="#" aria-label="下載 Pro 結構藍圖 PDF">Pro 結構藍圖（PDF）</a></li>
+        <li>📄 <a href="#" aria-label="下載 Premium 逐章建議樣本">Premium 逐章建議樣本</a></li>
+      </ul>
+
+      <h3>流程（免費工具交付）</h3>
+      <ol>
+        <li><b>下單付款</b>（Stripe / PayPal）→ 自動跳轉至表單</li>
+        <li><b>填表與上傳</b>：Google Form / Drive</li>
+        <li><b>交付</b>：Google Docs 留言 + Canva/Notion PDF/頁面</li>
+        <li><b>會議</b>（適用 Pro / Premium）：Google Meet / Zoom</li>
+      </ol>
+      <div class="note">若未能於承諾時間內交付，提供原路退款。範圍外需求可另報價。</div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-label="常見問答">
+      <h2>常見問答</h2>
+
+      <details>
+        <summary>為何要先付款？</summary>
+        <p>這是定制型專業服務，需投入時間與研究。為確保排程與品質，我們採「先付款再開始」。若未依期限交付，提供退款保障。</p>
+      </details>
+
+      <details>
+        <summary>你用哪些工具？會不會需要我付額外訂閱？</summary>
+        <p>交付完全以免費工具為主：Google Docs / Notion / Canva / Meet。若你沒有帳號，可用免費版註冊；不會要求付任何第三方訂閱費。</p>
+      </details>
+
+      <details>
+        <summary>如何保護內容與著作權？</summary>
+        <p>我們以工作合約（Email 條款）確認：你保有完整著作權；我們僅在交付過程中閱讀與提出建議，不會公開或再利用你的文本。</p>
+      </details>
+
+      <details>
+        <summary>Premium 能幫我「代寫」嗎？</summary>
+        <p>不提供代筆；我們提供結構與語言層面的專業建議與示例改寫片段，保留你的作者聲音。</p>
+      </details>
+    </section>
+
+    <footer>
+      <div>© <span class="mono">Novel Companion</span> — 敘事架構 × AI 編輯顧問 · 用免費工具交付 · 先付款再開始</div>
+    </footer>
+  </div>
+</body>
+</html>
